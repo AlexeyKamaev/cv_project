@@ -33,41 +33,35 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-
-
-def get_prediction(image: str):
+def get_prediction(image, recu):
 
     preprocessing = T.Compose(
     [
         T.ToPILImage(),
         T.Grayscale(1),
         T.Resize((400, 400)),
-        T.ToTensor()
-    ]
-)
-
-    numpydata = np.asarray(image)
-
-    x,y  = numpydata.shape[0], numpydata.shape[1]
-    imag = T.ToTensor()(image)
-    img = preprocessing(imag)
-
-
-    model.to('cpu')
-    model.eval()
-
-    back = T.Compose(
-    [
-        T.ToPILImage(),
-        T.Resize((x, y)),
-    ]
-)
+        T.ToTensor()])
     
-    with torch.no_grad():
-        pred = model(img.unsqueeze(0)).squeeze().detach()
-        pred = back(pred)
+    for i in stqdm(range(recu)):
+        numpydata = np.asarray(image)
+        x,y  = numpydata.shape[0], numpydata.shape[1]
+        img = T.ToTensor()(image)
+        img = preprocessing(img)
 
-    return pred
+        back = T.Compose(
+        [
+            T.ToPILImage(),
+            T.Resize((x, y)),])
+
+        model.to('cpu')
+        model.eval()
+
+        with torch.no_grad():
+            img = model(img.unsqueeze(0)).squeeze().detach()
+            image = back(img)
+
+    return image
+
 
 
 st.markdown("""
@@ -81,11 +75,14 @@ st.markdown("""
 st.title('Чистка документов')
 st.page_link("main.py", label="Home", icon="🏠")
 
+recu = st.slider('Сколько раз обработать изображение? (может упасть, аккуратно)', 1, 5, 1)
+st.success(f"Глубина рекурсии: {recu}")
+
 uploaded_file = st.file_uploader("Выберите изображение", type=["jpg", "jpeg", "png"], accept_multiple_files=True)
 
 if uploaded_file is not None:
 
-    for image in uploaded_file:
+    for image in stqdm(uploaded_file):
         now = datetime.datetime.now()
 
         image = Image.open(image)
@@ -96,38 +93,59 @@ if uploaded_file is not None:
         finish = datetime.datetime.now()
         elapsed_time = finish - now
         st.image(prediction, caption="Результат работы нейросети", use_column_width=None)
+        st.caption(f' Затраченное время на обработку:  Ч : М : С : МС ----> {elapsed_time}.')
+
+
+
+
+######################################################################################################
+
 
 st.title('Описание модели')
 
-st.header("Модель училась на 20 эпохах.", divider='rainbow')
-joke = st.slider("Сколько по вашему её нужно учить?", 0, 100, (20))
+st.header("Модель училась на 40 эпохах.", divider='rainbow')
+joke = st.slider("Сколько по вашему её нужно учить?", 0, 100, (40))
 
-if joke != 20:
+if joke != 40:
     st.write('Мы непременно учтём ваше мнение')
     st.caption(':blue[***Спасибо!!!!***]')
 
-st.divider()  # 👈 Draws a horizontal rule
+st.divider() #################################################################
+
+import os
+
+st.header("Примеры", divider='red')
+path_media = 'cv_project/media'
+
+for i, name_m in enumerate(os.listdir(path_media)):
+    if i < 5:
+        name = path_media + '/' + name_m
+        st.image(name, caption=f'Пример № {i+1}')
+    elif i == 5:
+        name = path_media + '/' + name_m
+        st.image(name, caption=f'График loss-функции')
+
+
+st.divider()  
 
 st.header("Объем train-выборки", divider='blue')
 st.write("Объем train-выборки состовлял 12:red[69] изображения")
 
-st.divider()  # 👈 Another horizontal rule
+st.divider()  #################################################################
 
-st.header("RMSE на тестовой выборке составил 0.014", divider='orange')
-import base64
-gif = "cv_project/media/RMSE.gif"
+st.header("RMSE на тестовой выборке составил 0.0145", divider='orange')
+gif = "media\RMSE.gif"
 
-file_ = open(gif, "rb")
-contents = file_.read()
-data_url = base64.b64encode(contents).decode("utf-8")
-file_.close()
+st.image(gif, caption='гифка ради гифки')
 
-st.markdown(
-    f'<img src="data:image/gif;base64,{data_url}" alt="cat gif">',
-    unsafe_allow_html=True,
-)
-st.divider()  # 👈 Another horizontal rule
+
+st.divider()  ##################################################################################################################################
+
+
+
 st.page_link("main.py", label="Home", icon="🏠")
+
+
 st.header('Код модели', divider='rainbow')
 
 code = '''class ConvEncoder(nn.Module):
