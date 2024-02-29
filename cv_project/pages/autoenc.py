@@ -79,6 +79,7 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 st.title('Чистка документов')
+st.page_link("main.py", label="Home", icon="🏠")
 
 uploaded_file = st.file_uploader("Выберите изображение", type=["jpg", "jpeg", "png"], accept_multiple_files=True)
 
@@ -95,8 +96,6 @@ if uploaded_file is not None:
         finish = datetime.datetime.now()
         elapsed_time = finish - now
         st.image(prediction, caption="Результат работы нейросети", use_column_width=None)
-        
-st.page_link("main.py", label="Home", icon="🏠")
 
 st.title('Описание модели')
 
@@ -128,8 +127,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 st.divider()  # 👈 Another horizontal rule
-
-
+st.page_link("main.py", label="Home", icon="🏠")
 st.header('Код модели', divider='rainbow')
 
 code = '''class ConvEncoder(nn.Module):
