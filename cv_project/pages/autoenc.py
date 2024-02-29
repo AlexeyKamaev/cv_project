@@ -18,7 +18,7 @@ from models.autoencoder import autoencoder
 
 model = autoencoder
 
-PATH = 'models\weights.pt'
+PATH = 'models/weights.pt'
 
 model.load_state_dict(torch.load(PATH))
 
@@ -99,12 +99,10 @@ if uploaded_file is not None:
         st.image(image, caption="Загруженное изображение", use_column_width=None)
 
         prediction = get_prediction(image)
-        # st.success(f"Предсказание: {prediction}")
         finish = datetime.datetime.now()
         elapsed_time = finish - now
         st.image(prediction, caption="Результат работы нейросети", use_column_width=None)
-        # st.write(f' Затраченное время на обработку:  Ч : М : С : МС ----> {elapsed_time}.')
-        st.write('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n')
+        
 st.page_link("main.py", label="Home", icon="🏠")
 
 st.title('Описание модели')
@@ -124,18 +122,18 @@ st.write("Объем train-выборки состовлял 12:red[69] изоб
 st.divider()  # 👈 Another horizontal rule
 
 st.header("RMSE на тестовой выборке составил 0.014", divider='orange')
-# import base64
-# gif = "media\RMSE.gif"
+import base64
+gif = "media/RMSE.gif"
 
-# file_ = open(gif, "rb")
-# contents = file_.read()
-# data_url = base64.b64encode(contents).decode("utf-8")
-# file_.close()
+file_ = open(gif, "rb")
+contents = file_.read()
+data_url = base64.b64encode(contents).decode("utf-8")
+file_.close()
 
-# st.markdown(
-#     f'<img src="data:image/gif;base64,{data_url}" alt="cat gif">',
-#     unsafe_allow_html=True,
-# )
+st.markdown(
+    f'<img src="data:image/gif;base64,{data_url}" alt="cat gif">',
+    unsafe_allow_html=True,
+)
 st.divider()  # 👈 Another horizontal rule
 
 
