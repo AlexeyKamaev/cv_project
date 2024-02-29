@@ -20,7 +20,7 @@ model.to(device)
 PATH = 'cv_project/models/weights.pt'
 
 
-model.load_state_dict(torch.load(PATH))
+model.load_state_dict(torch.load(PATH,map_location=torch.device('cpu')))
 model.to(device)
 
 
