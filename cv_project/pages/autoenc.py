@@ -124,18 +124,18 @@ st.write("Объем train-выборки состовлял 12:red[69] изоб
 st.divider()  # 👈 Another horizontal rule
 
 st.header("RMSE на тестовой выборке составил 0.014", divider='orange')
-import base64
-gif = "media\RMSE.gif"
+# import base64
+# gif = "media\RMSE.gif"
 
-file_ = open(gif, "rb")
-contents = file_.read()
-data_url = base64.b64encode(contents).decode("utf-8")
-file_.close()
+# file_ = open(gif, "rb")
+# contents = file_.read()
+# data_url = base64.b64encode(contents).decode("utf-8")
+# file_.close()
 
-st.markdown(
-    f'<img src="data:image/gif;base64,{data_url}" alt="cat gif">',
-    unsafe_allow_html=True,
-)
+# st.markdown(
+#     f'<img src="data:image/gif;base64,{data_url}" alt="cat gif">',
+#     unsafe_allow_html=True,
+# )
 st.divider()  # 👈 Another horizontal rule
 
 
