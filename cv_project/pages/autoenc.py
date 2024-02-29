@@ -14,14 +14,16 @@ from models.autoencoder import autoencoder
 
 model = autoencoder
 
+device = 'cpu'
+model.to(device)
+
 PATH = 'cv_project/models/weights.pt'
 
 
 model.load_state_dict(torch.load(PATH))
-
-
-device = 'cpu'
 model.to(device)
+
+
 
 st.markdown("""
     <style>
