@@ -118,7 +118,7 @@ import os
 st.header("Примеры", divider='red')
 path_media = 'cv_project/media'
 
-for i, name_m in enumerate(os.listdir(path_media)):
+for i, name_m in enumerate(sorted(os.listdir(path_media), key = lambda x: x[0].lower()):
     if i < 5:
         name = path_media + '/' + name_m
         st.image(name, caption=f'Пример № {i+1}')
