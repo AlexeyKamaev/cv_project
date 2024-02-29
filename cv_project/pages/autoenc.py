@@ -11,6 +11,7 @@ from PIL import Image
 import datetime
 
 from models.autoencoder import autoencoder
+from stqdm import stqdm
 
 model = autoencoder
 
