@@ -8,10 +8,6 @@ import torch.nn.functional as F
 import torch
 
 from PIL import Image
-import cv2
-
-
-
 import datetime
 
 from models.autoencoder import autoencoder
@@ -38,7 +34,7 @@ st.markdown("""
 
 
 
-
+# import cv2
 def get_prediction(image: str):
 
     preprocessing = T.Compose(
@@ -52,12 +48,12 @@ def get_prediction(image: str):
     numpydata = np.asarray(image)
 
     x,y  = numpydata.shape[0], numpydata.shape[1]
-    try:
-        imag = cv2.cvtColor(numpydata, cv2.COLOR_BGR2GRAY)
-    except:
-        imag = T.ToTensor()(image)
+    # try:
+    #     imag = cv2.cvtColor(numpydata, cv2.COLOR_BGR2GRAY)
+    # except:
+    #     imag = T.ToTensor()(image)
 
-
+    imag = T.ToTensor()(image)
     img = preprocessing(imag)
 
 
