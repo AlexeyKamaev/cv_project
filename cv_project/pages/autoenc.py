@@ -18,7 +18,8 @@ from models.autoencoder import autoencoder
 
 model = autoencoder
 
-PATH = 'models/weights.pt'
+PATH = 'cv_project/models/weights.pt'
+
 
 model.load_state_dict(torch.load(PATH))
 
@@ -123,7 +124,7 @@ st.divider()  # 👈 Another horizontal rule
 
 st.header("RMSE на тестовой выборке составил 0.014", divider='orange')
 import base64
-gif = "media/RMSE.gif"
+gif = "cv_project/media/RMSE.gif"
 
 file_ = open(gif, "rb")
 contents = file_.read()
