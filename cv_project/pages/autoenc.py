@@ -135,7 +135,7 @@ st.write("Объем train-выборки состовлял 12:red[69] изоб
 st.divider()  #################################################################
 
 st.header("RMSE на тестовой выборке составил 0.0145", divider='orange')
-gif = "media\RMSE.gif"
+gif = "cv_project/media/RMSE.gif"
 
 st.image(gif, caption='гифка ради гифки')
 
