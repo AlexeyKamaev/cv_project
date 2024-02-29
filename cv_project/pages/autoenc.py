@@ -35,13 +35,12 @@ st.markdown("""
 
 
 
-
-import cv2
 def get_prediction(image: str):
 
     preprocessing = T.Compose(
     [
         T.ToPILImage(),
+        T.Grayscale(1),
         T.Resize((400, 400)),
         T.ToTensor()
     ]
@@ -50,11 +49,6 @@ def get_prediction(image: str):
     numpydata = np.asarray(image)
 
     x,y  = numpydata.shape[0], numpydata.shape[1]
-    try:
-        imag = cv2.cvtColor(numpydata, cv2.COLOR_BGR2GRAY)
-    except:
-        imag = T.ToTensor()(image)
-
     imag = T.ToTensor()(image)
     img = preprocessing(imag)
 
