@@ -36,7 +36,7 @@ st.markdown("""
 
 
 
-# import cv2
+import cv2
 def get_prediction(image: str):
 
     preprocessing = T.Compose(
