@@ -50,10 +50,10 @@ def get_prediction(image: str):
     numpydata = np.asarray(image)
 
     x,y  = numpydata.shape[0], numpydata.shape[1]
-    # try:
-    #     imag = cv2.cvtColor(numpydata, cv2.COLOR_BGR2GRAY)
-    # except:
-    #     imag = T.ToTensor()(image)
+    try:
+        imag = cv2.cvtColor(numpydata, cv2.COLOR_BGR2GRAY)
+    except:
+        imag = T.ToTensor()(image)
 
     imag = T.ToTensor()(image)
     img = preprocessing(imag)
