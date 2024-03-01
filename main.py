@@ -20,6 +20,8 @@ Create a service for object detection with YOLOv8 and image denoising using a cu
 1. Document denoising using an autoencoder
 2. Wind Turbines Object Detection using YOLOv8''')
 
+st.subheader('Denoiser', divider='rainbow')
+
 
 
 st.markdown(st.page_link("pages/autoenc.py", label="Denoiser DOCS", icon='📝'), unsafe_allow_html=True)
