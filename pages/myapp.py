@@ -44,7 +44,7 @@ st.markdown("""
   </p>
 """, unsafe_allow_html=True)
 
-model_path = "cv_project/models/best.pt"
+model_path = "models/best.pt"
 
 st.set_option('deprecation.showfileUploaderEncoding', False)
 
