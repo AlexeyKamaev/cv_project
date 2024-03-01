@@ -22,12 +22,12 @@ Create a service for object detection with YOLOv8 and image denoising using a cu
 
 st.subheader('Denoiser', divider='rainbow')
 
-st.markdown(st.page_link("pages/autoenc.py", label=":red[***ТЫК-ТЫК-ТЫК-ТЫК-ТЫК-ТЫК-ТЫК-ТЫК-ТЫК-ТЫК***]", icon='📝'), unsafe_allow_html=True)
+st.page_link("pages/autoenc.py", label=":red[***ТЫК-ТЫК-ТЫК-ТЫК-ТЫК-ТЫК-ТЫК-ТЫК-ТЫК-ТЫК-ТЫК-ТЫК-ТЫК-ТЫК***]", icon='📝')
 with st.echo():
     st_lottie("https://lottie.host/d50d44da-8c5f-48da-af8b-57ad93b6e14c/h139wgXhFw.json")
     
 st.subheader('Yolo_v8', divider='rainbow')
-st.page_link("pages/myapp.py", label="Wind stations", icon='⚡')
+st.page_link("pages/myapp.py", label=":green[***ТЫК-ТЫК-ТЫК-ТЫК-ТЫК-ТЫК-ТЫК-ТЫК-ТЫК-ТЫК-ТЫК-ТЫК-ТЫК-ТЫК***]", icon='⚡')
 with st.echo():
     st.lottie("https://lottie.host/a7d94a5a-41ff-428d-8760-1d6445f6a4dc/N7tAKQoF92.json")
     
