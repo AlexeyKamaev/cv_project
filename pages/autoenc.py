@@ -90,7 +90,7 @@ if uploaded_file is not None:
 
         st.image(image, caption="Загруженное изображение", use_column_width=None)
 
-        prediction = get_prediction(image)
+        prediction = get_prediction(image, recu)
         finish = datetime.datetime.now()
         elapsed_time = finish - now
         st.image(prediction, caption="Результат работы нейросети", use_column_width=None)
