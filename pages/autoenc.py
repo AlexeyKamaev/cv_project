@@ -13,6 +13,8 @@ import datetime
 from models.autoencoder import autoencoder
 from stqdm import stqdm
 
+from retry import retry
+
 model = autoencoder
 
 device = 'cpu'
@@ -34,6 +36,8 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
+
+@retry
 def get_prediction(image, recu):
 
     preprocessing = T.Compose(
