@@ -122,24 +122,20 @@ st.markdown("""
 graph_path = "media_2/results.png"  # Replace with the actual path
 confusion_matrix_path = "media_2/confusion_matrix.png"  # Replace with the actual path
 
-# Load graphs
-graph_img = mpimg.imread(graph_path)
-confusion_matrix_img = mpimg.imread(confusion_matrix_path)
-
 # Display graphs
 st.markdown("""
   <p style='font-size:20px'>
     <strong>Графики</strong>
   </p>
 """, unsafe_allow_html=True)
-st.image(graph_img, caption="Графики", use_column_width=True)
+st.image(graph_path, caption="Графики", use_column_width=True)
 
 st.markdown("""
   <p style='font-size:20px'>
     <strong>Confusion Matrix</strong>
   </p>
 """, unsafe_allow_html=True)
-st.image(confusion_matrix_img, caption="Confusion Matrix", use_column_width=True)
+st.image(confusion_matrix_path, caption="Confusion Matrix", use_column_width=True)
 
 
 
