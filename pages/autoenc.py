@@ -47,7 +47,7 @@ def get_prediction(image, recu):
         T.Resize((400, 400)),
         T.ToTensor()])
     
-    for i in stqdm(range(recu)):
+    for i in range(recu):
         numpydata = np.asarray(image)
         x,y  = numpydata.shape[0], numpydata.shape[1]
         img = T.ToTensor()(image)
