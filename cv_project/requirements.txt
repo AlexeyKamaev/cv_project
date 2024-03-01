@@ -40,10 +40,9 @@ networkx==3.2.1
 numpy==1.26.3
 
 
-opencv-python-headless==4.5.1.48
 opencv-python==4.9.0.80
-opencv-contrib-python==4.5.5.62
-ultralytics==8.1.19
+opencv-python-headless==4.8.1.78
+ultralytics==8.1.6
 
 
 
