@@ -28,7 +28,6 @@ image_comparison(
     label1="Ветряк",
     label2="Бумажка",
     width=700,
-    height=700,
     starting_position=50,
     show_labels=True,
     make_responsive=True,
