@@ -23,8 +23,6 @@ st.markdown(st.page_link("pages/autoenc.py", label="Denoiser DOCS", icon='📝')
 
 with st.echo():
     st.lottie("https://lottie.host/a7d94a5a-41ff-428d-8760-1d6445f6a4dc/N7tAKQoF92.json")
-with st.echo():
-    st_lottie("https://lottie.host/a7d94a5a-41ff-428d-8760-1d6445f6a4dc/N7tAKQoF92.json")
     
 st.page_link("pages/myapp.py", label="Wind stations", icon='⚡')
 
