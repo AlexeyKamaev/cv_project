@@ -73,6 +73,10 @@ if uploaded_files:
         if len(uploaded_files) == 1 and st.button("Обнаружить"):
             result = model.predict(cv2_image)
             st.image(result[0].plot()[:, :, ::-1], caption="Результаты детекции", use_column_width=True)
+        else:
+            result = model.predict(cv2_image)
+            st.image(result[0].plot()[:, :, ::-1], caption="Результаты детекции", use_column_width=True)
+            
 
 elif url:
     try:
