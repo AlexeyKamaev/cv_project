@@ -1,5 +1,4 @@
 import streamlit as st
-from streamlit_image_comparison import image_comparison
 from streamlit_lottie import st_lottie
 
 st.markdown("""
@@ -13,8 +12,15 @@ st.markdown("""
 
 
 st.title('📝 &  ⚡💨🍃🪫💡')
+st.title('📝 &  ⚡💨🍃🪫💡')
+st.markdown('''## Task 📌
+Create a service for object detection with YOLOv8 and image denoising using a custom AutoEncoder class.
 
-st.write('choose your option')
+## Contents 📝
+1. Wind Turbines Object Detection using YOLOv8 💨)
+2. Document denoising using an autoencoder 📑)''')
+
+
 
 st.markdown(st.page_link("pages/autoenc.py", label="Denoiser DOCS", icon='📝'), unsafe_allow_html=True)
 with st.echo():
