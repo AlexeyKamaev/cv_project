@@ -20,6 +20,6 @@ st.write('choose your option')
 
 
 st.page_link("pages/autoenc.py", label="Denoiser DOCS", icon='📝')
-# st.page_link("pages/streamlit_sport_model.py", label="Sport detector", icon='⚡')
+st.page_link("pages/myapp.py", label="Wind stations", icon='⚡')
 
 st.header(f'''made by: Alexey Kamaev & Marina Kochetova''')
