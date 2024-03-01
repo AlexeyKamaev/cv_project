@@ -37,7 +37,7 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 
-@retry
+@retry(tries=3, delay=5)
 def get_prediction(image, recu):
 
     preprocessing = T.Compose(
