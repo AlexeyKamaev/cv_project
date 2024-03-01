@@ -23,8 +23,15 @@ st.set_page_config(page_title="Image-Comparison Example", layout="centered")
 
 # render image-comparison
 image_comparison(
-    img1="image1.jpg",
-    img2="image2.jpg",
+    img1="media_2/Windmills_D1-D4_(Thornton_Bank).jpg",
+    img2="media_2/Prigovor_Rtishchevo.jpg",
+    label1="Ветряк",
+    label2="Бумажка",
+    width=700,
+    starting_position=50,
+    show_labels=True,
+    make_responsive=True,
+    in_memory=True,
 )
 
 st.write('choose your option')
