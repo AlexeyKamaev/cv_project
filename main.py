@@ -12,13 +12,13 @@ st.markdown("""
 
 
 st.title('📝 &  ⚡💨🍃🪫💡')
-st.title('📝 &  ⚡💨🍃🪫💡')
+
 st.markdown('''## Task 📌
 Create a service for object detection with YOLOv8 and image denoising using a custom AutoEncoder class.
 
-## Contents 📝
-1. Wind Turbines Object Detection using YOLOv8 💨)
-2. Document denoising using an autoencoder 📑)''')
+## Contents
+1. Document denoising using an autoencoder
+2. Wind Turbines Object Detection using YOLOv8''')
 
 
 
