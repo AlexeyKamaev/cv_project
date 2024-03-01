@@ -18,7 +18,7 @@ model = autoencoder
 device = 'cpu'
 model.to(device)
 
-PATH = 'cv_project/models/weights.pt'
+PATH = 'models/weights.pt'
 
 
 model.load_state_dict(torch.load(PATH,map_location=torch.device('cpu')))
@@ -116,7 +116,7 @@ st.divider() #################################################################
 import os
 
 st.header("Примеры", divider='red')
-path_media = 'cv_project/media'
+path_media = 'media'
 
 for i, name_m in enumerate(sorted(os.listdir(path_media), key = lambda x: x[0].lower())):
     if i < 5:
@@ -135,7 +135,7 @@ st.write("Объем train-выборки состовлял 12:red[69] изоб
 st.divider()  #################################################################
 
 st.header("RMSE на тестовой выборке составил 0.0145", divider='orange')
-gif = "cv_project/media/RMSE.gif"
+gif = "media/RMSE.gif"
 
 st.image(gif, caption='гифка ради гифки')
 
