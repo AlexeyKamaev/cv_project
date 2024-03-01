@@ -16,9 +16,6 @@ def create_opencv_image_from_bytesio(img_bytesio, cv2_img_flag=1):
     img_array = np.asarray(bytearray(img_bytesio.read()), dtype=np.uint8)
     return cv2.imdecode(img_array, cv2_img_flag)
 
-ssl._create_default_https_context = ssl._create_unverified_context
-# Ignore SSL certificate verification errors
-
 st.set_option('deprecation.showfileUploaderEncoding', False)
 st.markdown("""
   <p style='text-align: center; font-size:36px'>
